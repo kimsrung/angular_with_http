@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>$Http AngularJS Trainning</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+  <script type="text/javascript" src="../app/javascripts/app.js"></script>
+</head>
+<body ng-app='myApp'>
+  <div ng-controller='myCtrl'>
+    <div class="page-header">
+      <h1 class="text-center">Movie List</h1>
+      <button class="btn btn-default" ng-click="show=true">Show Table</button>
+      <button class="btn btn-default" ng-click="show=false">Hide Table</button>
+      <button class="btn btn-default" ng-click="show=!show">Toggle Hide/Show</button>
+    </div>
+    <table class="table table-striped" ng-show="show">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Average Rating</th>
+          <th>Release Year</th>
+          <th>URL</th>
+          <th>Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="movie in movies">
+          <td>{{movie.id}}</td>
+          <td>{{movie.name}}</td>
+          <td>{{movie.averageRating}}</td>
+          <td>{{movie.releaseYear}}</td>
+          <td>{{movie.url}}</td>
+          <td>{{movie.rating}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
